@@ -1,13 +1,12 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
-import { Products } from '../pages'
+import { Product, Products } from '../pages'
 
 export const Router = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Products />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Products />} />
+      <Route path="/product/:id" element={<Product />} />
+    </Routes>
   )
 }

@@ -4,6 +4,6 @@ import { Product } from './Product'
 
 test('renders product text', () => {
   render(<Product />)
-  const linkElement = screen.getByText(/product/i)
+  const linkElement = screen.getByText(/nombre del producto/i)
   expect(linkElement).toBeInTheDocument()
 })
