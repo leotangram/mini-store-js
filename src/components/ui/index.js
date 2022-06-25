@@ -1,3 +1,3 @@
-export * from './header'
-export * from './image'
-export * from './search'
+export * from './header/Header'
+export * from './image/Image'
+export * from './search/Search'
