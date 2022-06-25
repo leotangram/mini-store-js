@@ -1,4 +1,6 @@
-# MiniStore Between
+# MiniStore Between :iphone:
+
+---
 
 Hello! This is the MiniStore frontend project.
 
@@ -8,6 +10,8 @@ To download this project you can run:
 `git clone https://github.com/leotangram/mini-store-between.git`
 
 ## RUN, BUILD, TEST AND LINT
+
+---
 
 In the project directory, you can run:
 
@@ -41,3 +45,12 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run lint`
 
 Validate the code
+
+## Dependencies added after boilerplate
+
+---
+
+- [MUI (Material UI)](https://mui.com/)
+- [React Router DOM](https://reactrouter.com/docs/en/v6/getting-started/overview)
+- [Redux Toolkit](https://redux-toolkit.js.org/tutorials/quick-start)
+- [React Query](https://react-query.tanstack.com/)
