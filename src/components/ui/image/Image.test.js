@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react'
+
 import { Image } from './Image'
 
 test('renders Image text', () => {
