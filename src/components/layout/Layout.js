@@ -3,11 +3,12 @@ import { Box } from '@mui/material'
 
 import { Header } from '../ui'
 
-export const Layout = ({ title }) => {
+export const Layout = ({ children, title }) => {
   return (
     <Box>
       <Header />
       {title}
+      {children}
     </Box>
   )
 }
