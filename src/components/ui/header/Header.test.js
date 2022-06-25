@@ -3,6 +3,6 @@ import { Header } from './Header'
 
 test('renders header text', () => {
   render(<Header />)
-  const linkElement = screen.getByText(/header/i)
+  const linkElement = screen.getByText(/ministore/i)
   expect(linkElement).toBeInTheDocument()
 })
