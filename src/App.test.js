@@ -1,8 +1,16 @@
 import { render, screen } from '@testing-library/react'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import App from './App'
 
 test('renders app', () => {
-  render(<App />)
-  const linkElement = screen.getByText(/ministore/i)
-  expect(linkElement).toBeInTheDocument()
+  const client = new QueryClient()
+
+  render(
+    <QueryClientProvider client={client}>
+      <App />
+    </QueryClientProvider>
+  )
+
+  const header = screen.getByText(/ministore/i)
+  expect(header).toBeInTheDocument()
 })

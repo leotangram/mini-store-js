@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
-import { renderWithRouter } from '../tests/utils'
 
+import { renderWithRouter } from '../tests/utils'
 import { Router } from './Router'
 
 describe('<Router />', () => {
