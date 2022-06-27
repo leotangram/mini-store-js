@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query'
 import { getProducts } from '../api'
 
-export const useProduct = id => {
+export const useFetchProduct = id => {
   // if (!id) {
   return useQuery(['product'], getProducts)
   // }

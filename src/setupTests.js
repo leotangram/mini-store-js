@@ -5,11 +5,11 @@
 import '@testing-library/jest-dom'
 import '@testing-library/jest-dom/extend-expect'
 
-import { useProduct } from './hooks/useProduct'
+import { useFetchProduct } from './hooks'
 
-const mockedUseProduct = useProduct
+const mockedUseProduct = useFetchProduct
 
-jest.mock('./hooks/useProduct')
+jest.mock('./hooks/useFetchProduct')
 
 beforeEach(() => {
   mockedUseProduct.mockImplementation(() => ({ isLoading: true }))
