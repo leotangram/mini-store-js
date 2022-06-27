@@ -1,15 +1,14 @@
-import { BrowserRouter } from 'react-router-dom'
+import { CssBaseline, ThemeProvider } from '@mui/material'
 
-import './App.css'
 import { Router } from './router'
+import { darkTheme } from './themes'
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <Router />
+    </ThemeProvider>
   )
 }
 
