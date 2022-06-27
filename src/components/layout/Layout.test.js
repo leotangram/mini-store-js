@@ -1,9 +1,9 @@
 import { screen } from '@testing-library/react'
-import { renderWithRouter } from '../../tests/utils'
+import { customRender } from '../../tests/utils'
 
 import { Layout } from './Layout'
 
-beforeEach(() => renderWithRouter(<Layout title="Lista de productos" />))
+beforeEach(() => customRender(<Layout title="Lista de productos" />))
 
 describe('<Layout />', () => {
   test('should render <Header />', () => {

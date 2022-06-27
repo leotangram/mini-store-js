@@ -1,12 +1,12 @@
 import { screen } from '@testing-library/react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import App from './App'
-import { renderWithRouter } from './tests/utils'
+import { customRender } from './tests/utils'
 
 test('renders app', () => {
   const client = new QueryClient()
 
-  renderWithRouter(
+  customRender(
     <QueryClientProvider client={client}>
       <App />
     </QueryClientProvider>

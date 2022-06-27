@@ -1,7 +1,7 @@
-import { render } from '@testing-library/react'
+import { customRender } from '../../../tests/utils'
 
 import { Search } from './Search'
 
 test('renders without errors', () => {
-  render(<Search />)
+  customRender(<Search />)
 })

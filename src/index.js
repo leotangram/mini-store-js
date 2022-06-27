@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { BrowserRouter as Router } from 'react-router-dom'
+import { Provider } from 'react-redux'
 
 import './index.css'
+import { store } from './store'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 
@@ -22,10 +24,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <Router>
-        <App />
-      </Router>
-      <ReactQueryDevtools />
+      <Provider store={store}>
+        <Router>
+          <App />
+        </Router>
+        <ReactQueryDevtools />
+      </Provider>
     </QueryClientProvider>
   </React.StrictMode>
 )
