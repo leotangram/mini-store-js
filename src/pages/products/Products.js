@@ -1,7 +1,7 @@
+import { Grid } from '@mui/material'
 import { useEffect, useState } from 'react'
 
 import { Layout } from '../../components/layout'
-import { Search } from '../../components/ui'
 import { ProductItem } from '../../components/products'
 import { useProduct } from '../../hooks/useProduct'
 
@@ -17,10 +17,11 @@ export const Products = () => {
 
   return (
     <Layout title="Lista de productos">
-      <Search />
-      {products?.map(product => (
-        <ProductItem key={product.id} />
-      ))}
+      <Grid container spacing={2}>
+        {products?.map(product => (
+          <ProductItem key={product.id} {...product} />
+        ))}
+      </Grid>
     </Layout>
   )
 }

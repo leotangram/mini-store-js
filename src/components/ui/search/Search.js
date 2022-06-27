@@ -1,5 +1,5 @@
 import { TextField } from '@mui/material'
 
 export const Search = () => {
-  return <TextField label="Buscar">Search</TextField>
+  return <TextField label="Buscar" />
 }
