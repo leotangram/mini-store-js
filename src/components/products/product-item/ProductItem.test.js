@@ -1,4 +1,5 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
+import { renderWithRouter } from '../../../tests/utils'
 
 import { ProductItem } from './ProductItem'
 
@@ -12,7 +13,7 @@ test('renders ProductItem text', () => {
       'https://front-test-api.herokuapp.com/images/ZmGrkLRPXOTpxsU4jjAcv.jpg'
   }
 
-  render(<ProductItem {...productItem} />)
+  renderWithRouter(<ProductItem {...productItem} />)
   const linkElement = screen.getByText(/acer iconia talk s/i)
   expect(linkElement).toBeInTheDocument()
 })
