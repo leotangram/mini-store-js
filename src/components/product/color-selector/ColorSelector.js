@@ -1,5 +1,7 @@
+import PropTypes from 'prop-types'
 import CircleIcon from '@mui/icons-material/Circle'
 import { Box, Button, Typography } from '@mui/material'
+
 import { stringUtils } from '../../../utils'
 
 export const ColorSelector = ({ colors, onSelectedColor, selectedColor }) => {
@@ -29,4 +31,12 @@ export const ColorSelector = ({ colors, onSelectedColor, selectedColor }) => {
       </Box>
     </Box>
   )
+}
+
+ColorSelector.propTypes = {
+  colors: PropTypes.array.isRequired,
+  onSelectedColor: PropTypes.func,
+  selectedColor: PropTypes.shape({
+    code: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  }).isRequired
 }
