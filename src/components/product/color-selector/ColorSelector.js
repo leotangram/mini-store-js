@@ -1,5 +1,5 @@
 import CircleIcon from '@mui/icons-material/Circle'
-import { Box, Button, IconButton, Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import { stringUtils } from '../../../utils'
 
 export const ColorSelector = ({ colors, onSelectedColor, selectedColor }) => {

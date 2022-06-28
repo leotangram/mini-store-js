@@ -1,18 +1,34 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Box, Button, Typography } from '@mui/material'
+import { useDispatch } from 'react-redux'
+
 import { ColorSelector } from '../color-selector/ColorSelector'
 import { MemorySizeSelector } from '../memory-size-selector/MemorySizeSelector'
+import { useFetchProductToCart } from '../../../hooks'
+import { onChangeCartCount } from '../../../store/cart/cartSlice'
 
-export const Actions = ({ options }) => {
+export const Actions = ({ id, options }) => {
+  const dipatch = useDispatch()
+
   const [selectedStorage, setSelectedStorage] = useState(options?.storages[0])
   const [selectedColor, setSelectedColor] = useState(options?.colors[0])
+
+  const { data, refetch } = useFetchProductToCart({
+    id,
+    colorCode: selectedColor?.code,
+    storageCode: selectedStorage?.code
+  })
+
+  useEffect(() => {
+    if (data) {
+      dipatch(onChangeCartCount(data.count))
+    }
+  }, [data, dipatch])
 
   const onSelectedStorage = selectedStorage =>
     setSelectedStorage(selectedStorage)
 
   const onSelectedColor = selectedColor => setSelectedColor(selectedColor)
-
-  const onAddToCart = () => console.log('Adding')
 
   return (
     <>
@@ -32,7 +48,7 @@ export const Actions = ({ options }) => {
             selectedColor={selectedColor}
           />
         )}
-        <Button onClick={onAddToCart} color="secondary">
+        <Button onClick={refetch} color="secondary">
           Añadir a la cesta
         </Button>
       </Box>

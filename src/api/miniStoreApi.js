@@ -15,3 +15,8 @@ export const getProductById = async id => {
   const { data } = await miniStoreApi.get(`/product/${id}`)
   return data
 }
+
+export const addProductToCart = async product => {
+  const { data } = await miniStoreApi.post(`/cart`, product)
+  return data
+}

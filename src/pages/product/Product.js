@@ -31,7 +31,7 @@ export const Product = () => {
         </Grid>
         <Grid item xs={12} md={6}>
           <Description product={product} />
-          {options && <Actions options={options} />}
+          <Actions id={id} options={options} />
         </Grid>
       </Grid>
     </Layout>
