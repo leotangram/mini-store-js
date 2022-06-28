@@ -22,5 +22,5 @@ export const Layout = ({ children, title }) => {
 }
 
 Layout.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string.isRequired
 }
