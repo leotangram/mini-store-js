@@ -4,6 +4,10 @@
 
 Hello! This is the MiniStore frontend project.
 
+## Live Demo
+
+Open [https://mini-store-js.vercel.app/](https://mini-store-js.vercel.app/) to view it in your browser.
+
 ## Download this project
 
 To download this project you can run:
