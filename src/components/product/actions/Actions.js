@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react'
 import { Box, Button, Typography } from '@mui/material'
 import { useDispatch } from 'react-redux'
@@ -54,4 +55,12 @@ export const Actions = ({ id, options }) => {
       </Box>
     </>
   )
+}
+
+ColorSelector.propTypes = {
+  id: PropTypes.string.isRequired,
+  options: PropTypes.shape({
+    storages: PropTypes.array,
+    colors: PropTypes.array
+  })
 }
