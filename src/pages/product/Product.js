@@ -1,22 +1,16 @@
 import { Grid } from '@mui/material'
-import { useParams } from 'react-router-dom'
 
 import { Layout } from '../../components/layout'
 import { Actions, Description } from '../../components/product'
 import { Image, Loader } from '../../components/ui'
-import { useFetchProduct } from '../../hooks'
+import { useProduct } from '../../hooks'
 
 export const Product = () => {
-  let { id } = useParams()
-  const { data: product, isLoading } = useFetchProduct(id)
+  const { title, imgUrl, product, options, isLoading, id } = useProduct()
 
   if (isLoading) {
     return <Loader />
   }
-
-  const { brand, model, imgUrl, options } = product
-
-  const title = `Producto: ${brand} ${model}`
 
   return (
     <Layout title={title}>
