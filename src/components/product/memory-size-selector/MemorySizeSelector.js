@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { Box, Button, Typography } from '@mui/material'
 
 export const MemorySizeSelector = ({
@@ -28,4 +29,12 @@ export const MemorySizeSelector = ({
       </Box>
     </Box>
   )
+}
+
+MemorySizeSelector.propTypes = {
+  onSelectedStorage: PropTypes.func,
+  selectedStorage: PropTypes.shape({
+    code: PropTypes.string.isRequired
+  }).isRequired,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 }
