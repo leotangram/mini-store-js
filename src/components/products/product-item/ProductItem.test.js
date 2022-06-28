@@ -14,6 +14,6 @@ test('renders ProductItem text', () => {
   }
 
   customRender(<ProductItem {...productItem} />)
-  const linkElement = screen.getByText(/acer iconia talk s/i)
+  const linkElement = screen.getByText(/acer - iconia talk s/i)
   expect(linkElement).toBeInTheDocument()
 })
