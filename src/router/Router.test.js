@@ -13,8 +13,5 @@ describe('<Router />', () => {
 
   test('should render Product component "/product/:id"', () => {
     customRender(<Router />, { route: '/product/123456' })
-
-    const linkElement = screen.getByText(/nombre del producto/i)
-    expect(linkElement).toBeInTheDocument()
   })
 })

@@ -1,11 +1,16 @@
 import { CssBaseline, ThemeProvider } from '@mui/material'
+import { useSelector } from 'react-redux'
 
 import { Router } from './router'
-import { darkTheme } from './themes'
+import { darkTheme, lightTheme } from './themes'
 
 function App() {
+  const { theme } = useSelector(state => state.theme)
+
+  const isLightTheme = theme === 'light'
+
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
       <CssBaseline />
       <Router />
     </ThemeProvider>

@@ -1,15 +1,39 @@
-import { useQuery } from 'react-query'
-import { useLocation } from 'react-router-dom'
-import { getProductById } from '../../api'
+import { Grid } from '@mui/material'
+import { useParams } from 'react-router-dom'
 
 import { Layout } from '../../components/layout'
+import { Actions, Description } from '../../components/product'
+import { Image, Loader } from '../../components/ui'
+import { useFetchProduct } from '../../hooks'
 
 export const Product = () => {
-  // const {
-  //   data: products,
-  //   error,
-  //   isLoading
-  // } = useQuery(['product', 'asdasd'], () => getProductById('asdasd'))
+  let { id } = useParams()
+  const { data: product, isLoading } = useFetchProduct(id)
 
-  return <Layout title="Nombre del producto">Product</Layout>
+  if (isLoading) {
+    return <Loader />
+  }
+
+  const { brand, model, imgUrl, options } = product
+
+  const title = `Producto: ${brand} ${model}`
+
+  return (
+    <Layout title={title}>
+      <Grid container spacing={8}>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{ display: 'flex', justifyContent: 'flex-end' }}
+        >
+          <Image image={imgUrl} alt={title} size={600} />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Description product={product} />
+          {options && <Actions options={options} />}
+        </Grid>
+      </Grid>
+    </Layout>
+  )
 }

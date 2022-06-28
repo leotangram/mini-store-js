@@ -4,6 +4,6 @@ import { Description } from './Description'
 
 test('renders Description text', () => {
   render(<Description />)
-  const linkElement = screen.getByText(/description/i)
+  const linkElement = screen.getByText(/descripción/i)
   expect(linkElement).toBeInTheDocument()
 })
