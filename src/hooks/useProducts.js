@@ -5,7 +5,7 @@ import { useFetchProduct } from './useFetchProduct'
 
 export const useProducts = () => {
   const { searchValue } = useSelector(state => state.search)
-  const { data: allProducts, error, isLoading } = useFetchProduct()
+  const { data: allProducts, isLoading } = useFetchProduct()
 
   const [products, setProducts] = useState([])
 
