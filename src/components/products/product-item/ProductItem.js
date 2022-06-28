@@ -7,8 +7,9 @@ import {
   Typography
 } from '@mui/material'
 import { Image } from '../../ui'
+import { currencyUtils } from '../../../utils'
 
-export const ProductItem = ({ brand, id, imgUrl, model }) => {
+export const ProductItem = ({ brand, id, imgUrl, model, price }) => {
   const navigate = useNavigate()
 
   const goToProductDetail = () => navigate(`/product/${id}`)
@@ -20,6 +21,7 @@ export const ProductItem = ({ brand, id, imgUrl, model }) => {
           <CardContent>
             <Typography variant="h6">{`${brand} ${model}`}</Typography>
             <Image image={imgUrl} alt={`${brand} ${model}`} />
+            <Typography>{currencyUtils.format(price)}</Typography>
           </CardContent>
         </CardActionArea>
       </Card>
