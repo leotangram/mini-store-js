@@ -19,7 +19,7 @@ export const ProductItem = ({ brand, id, imgUrl, model, price }) => {
       <Card sx={{ minWidth: '100%' }} onClick={goToProductDetail}>
         <CardActionArea>
           <CardContent>
-            <Typography variant="h6">{`${brand} ${model}`}</Typography>
+            <Typography variant="h6">{`${brand} - ${model}`}</Typography>
             <Image image={imgUrl} alt={`${brand} ${model}`} />
             <Typography>{currencyUtils.format(price)}</Typography>
           </CardContent>
